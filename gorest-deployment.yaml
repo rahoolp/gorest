@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gorest
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: gorest
+  template:
+    metadata:
+      labels:
+        app: gorest
+    spec:
+      containers:
+      - image: docker-gs-ping
+        name: gorest
+        ports:
+        - containerPort: 80
