@@ -16,5 +16,6 @@ spec:
       containers:
       - image: docker-gs-ping
         name: gorest
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
